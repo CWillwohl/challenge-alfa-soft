@@ -16,7 +16,6 @@ class UpdateContactRequest extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,20 +23,24 @@ class UpdateContactRequest extends FormRequest
      */
     public function rules()
     {
+        $contactId = $this->contact;
+
+        if(!gettype($this->contact) == 'string') {
+            $contactId = $this->contact->id;
+        }
+
         return [
             'name' => ['required', 'string', 'min:5', 'max:255'],
             'contactData' => [
                 'required',
-                'string',
-                'max:255',
-                Rule::unique('contacts', 'contact')->whereNull('deleted_at')->ignore($this->contact->id)
+                'digits:9',
+                Rule::unique('contacts', 'contact')->whereNull('deleted_at')->ignore($contactId)
             ],
             'email' => [
                 'required',
-                'string',
                 'email',
                 'max:255',
-                Rule::unique('contacts', 'email')->whereNull('deleted_at')->ignore($this->contact->id)
+                Rule::unique('contacts', 'email')->whereNull('deleted_at')->ignore($contactId)
             ],
         ];
     }

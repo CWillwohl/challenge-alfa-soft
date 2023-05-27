@@ -33,7 +33,8 @@
             </div>
 
             <!-- Remember Me -->
-            <div class="block mt-4">
+            <div class="w-full mt-4 flex flex-col justify-start gap-4">
+                <a href="{{ route('register') }}" class="underline text-sm text-gray-600 hover:text-gray-900">Not have account? click me.</a>
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>

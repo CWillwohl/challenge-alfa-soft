@@ -27,6 +27,15 @@
                 </div>
             </header>
 
+            @if(session('success'))
+                <div class="w-full flex justify-center mt-4">
+                    <p class="w-2/3 p-4 bg-green-500/20 border border-green-700 shadow-lg shadow-green-100 text-green-700 rounded font-semibold">{{ session('success') }}</p>
+                </div>
+            @elseif(session('error'))
+                <div class="w-full flex justify-center mt-4">
+                    <p class="w-2/3 p-4 bg-red-500/20 border border-red-700 shadow-lg shadow-red-100 text-red-700 rounded font-semibold">{{ session('error') }}</p>
+                </div>
+            @endif
             <!-- Page Content -->
             <main>
                 {{ $slot }}
