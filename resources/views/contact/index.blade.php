@@ -7,7 +7,7 @@
 
     <div class="w-full flex justify-center">
         <div class="w-full md:w-1/2
-        flex flex-col justify-center items-start m-8 gap-4
+        flex flex-col justify-center items-center m-8 gap-4 p-4
         bg-white">
 
             <div class="w-full flex p-4 bg-slate-200">
@@ -49,6 +49,10 @@
                     @endforelse
                 </tbody>
             </table>
+            <div class="w-full flex flex-col">
+                {{ $contacts->links() }}
+            </div>
+
         </div>
     </div>
 

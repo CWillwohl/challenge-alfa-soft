@@ -32,7 +32,7 @@
                 <div class="w-full flex flex-col gap-2">
                     <label for="contactData">Contact <span class="text-zinc-800 font-semibold">(9 caracters)</span></label>
                     <input type="text" name="contactData" id="contactData" class="w-full rounded shadow" value="{{ old('contact') ?? $contact->contact }}">
-                    @error('contact')
+                    @error('contactData')
                         <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
