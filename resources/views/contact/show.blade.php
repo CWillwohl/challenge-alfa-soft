@@ -35,8 +35,13 @@
             </div>
 
             <div class="w-full flex p-4 bg-slate-200">
-                <div class="w-full flex justify-end">
-                    <a href="{{ route('contacts.edit', $contact) }}" class="bg-yellow-500 hover:bg-yellow-600 duration-300 text-white p-4">Edit this Contact</a>
+                <div class="w-full flex justify-between">
+                    <form action="{{ route('contacts.destroy', $contact) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" href="{{ route('contacts.destroy', $contact) }}" class="bg-red-500 hover:bg-red-600 duration-300 text-white p-4 uppercase">Delete</button>
+                    </form>
+                    <a href="{{ route('contacts.edit', $contact) }}" class="bg-zinc-800 hover:bg-zinc-900 duration-300 text-white p-4 uppercase">Edit this Contact</a>
                 </div>
             </div>
         </div>

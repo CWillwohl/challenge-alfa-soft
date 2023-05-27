@@ -51,7 +51,7 @@
 
             <div class="w-full flex p-4 bg-slate-200">
                 <div class="w-full flex justify-end">
-                    <button class="bg-green-500 hover:bg-green-600 duration-300 text-white p-4">Create a Contact</button>
+                    <button class="bg-green-500 hover:bg-green-600 duration-300 text-white p-4 uppercase">Create a Contact</button>
                 </div>
             </div>
         </div>
